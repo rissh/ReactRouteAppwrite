@@ -1,27 +1,25 @@
 # React Authentication Private Routes With Appwrite
 
-Source code for complete Authenticate tutorial (LINK WILL BE ADDED HERE). 
+A video guide can be found [here](video-notes.md)
 
-Reference [1-starter-template](1-starter-template) to follow along with video and [2-final](2-final) to see final source code.
-
-Video guide can be found [here](video-notes.md)
-
-**Topics coverd in video:**
+## **Topics covered in this project:**
 
 - Private Routes
 - Auth Context
 - User Login
-- Persisting logged in user
+- Persisting logged-in user
 - User Logout
 - Registration
 
-### Project Pages
+## Project Pages
 
 <img src="images/demo.png">
 
 ## Getting started
 
 1. Clone repo
-2. `cd 1-starter-template`
 3. run `npm install`
-4. Create account and project on appwrite.io and follow [guide](video-notes.md#appwrite-console-setup--config).
+4. Create an account and project on appwrite.io and follow [guide](video-notes.md#appwrite-console-setup--config).
+
+
+That's it! You're now ready to start implementing authentication and private routes in your React application using Appwrite. Feel free to refer to the provided video guide and the project's source code for detailed implementation steps.
