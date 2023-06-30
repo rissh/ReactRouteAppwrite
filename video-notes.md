@@ -1,28 +1,28 @@
 # React Auth & Private Routes With Appwrite
 
-The perfect auth combo - In this tutorial I will demonstrate how to handle the entire authentication proccess along with adding private routes to our app wich will protect pages from unauthenticated users. All this with react router version 6.
+The perfect auth combo - In this repository, I will demonstrate how to handle the entire authentication process along with adding private routes to our app which will protect pages from unauthenticated users. All this with react-router version 6.
 
 
-In this video we will cover the following:
+In this project, we will cover the following:
 
 - Private Routes
 - Auth Context
 - User Login
-- Persisting logged in user
+- Persisting logged-in user
 - User Logout
 - Registration
 
 **Appwrite**
 
-For our backend of choice I will use my new favorite platform called Appwrite wich will make authenication incredibly easy for us. If you haven't head of Appwrite yet it's a Backend As A Service (BaaS) platform that's a great alternitive to firebase. 
+For our backend of choice, I will use my new favorite platform called Appwrite which will make authentication incredibly easy for us. If you haven't heard of Appwrite yet it's a Backend As Service (BaaS) platform that's a great alternative to Firebase. 
 
-Appwrite is fully open sources and can be hosted localy or on the appwrite cloud. In this tutorial we will use the appwrite cloud so setup will take just a few minutes and then we can jump into coding our application.
+Appwrite is fully open source and can be hosted locally or on the appwrite cloud. In this tutorial we will use the appwrite cloud so setup will take just a few minutes and then we can jump into coding our application.
 
 **Starter Code**
 
-For this project I have setup the boiler plate code with a few pages and some styling - We have a login, register + home and profile page wich we will start building around. 
+For this project I have set up the boilerplate code with a few pages and some styling - We have a login, register + home, and profile page which we will start building around. 
 
-Before we set anything up let's clone the github repo that we currently have an explore our template.
+Before we set anything up let's clone the GitHub repo that we currently have and explore our template.
 
 **appwriteConfig.js**
 
@@ -32,8 +32,8 @@ Once we have the started code setup we'll want to run `npm install` and create a
 
 1. Create an account on appwrite.io
 2. Create a project
-3. Select a plarform - Select `Web App`
-4. Set `localhost` as the host name and give your app a name
+3. Select a platform - Select `Web App`
+4. Set `localhost` as the hostname and give your app a name
 5. Install SDK and add to react app (appwriteConfig.js)
 
 ```
@@ -57,12 +57,12 @@ export default client;
 
 ```
 
-6. Create user
+6. Create a user
 
 
 ## Private routes
 
-In this approach we will use thew `Outlet` component provided by react router 6.
+In this approach, we will use thew `Outlet` component provided by react-router 6.
 
 The `Outlet` component acts as a placeholder for child routes, allowing you to define multiple private sub-routes under the same route.
 
@@ -79,7 +79,7 @@ const PrivateRoutes = () => {
 
 In this example, the `PrivateRoutes` component checks if the user is authenticated using the `checkAuth` function. If the user is authenticated, it renders the child routes defined inside the `Outlet` component. Otherwise, it redirects the user to the `/login` page.
 
-In the next few steps I we will build out our `AuthContext` and a custom hook to check our auth status, until then we will hard code the status of `false` to represent an unauthenticated user.
+In the next few steps we will build out our `AuthContext` and a custom hook to check our auth status, until then we will hard code the status of `false` to represent an unauthenticated user.
 
 **Using The `PrivateRoutes` component**
 
@@ -191,7 +191,7 @@ const PrivateRoutes = () => {
 
 **Header**
 
-Render links & button based on auth state
+Render links & buttons based on auth state
 
 ```jsx
 ...
@@ -264,7 +264,7 @@ const loginForm = useRef(null)
 
 **`loginUser` Method**
 
-Import `account` from `appwriteConfig` and add the following to the loginUser method
+Import `account` from `appwriteConfig` and add the following to the loginuser method
 
 ```jsx
 //utils/AuthContext.jsx
@@ -290,11 +290,11 @@ const loginUser = async (userInfo) => {
 
 **Persisting User Login**
 
-Even though we may have a user session, the `user` state will always start as null, therefor keeping us from accessing any of the private routes.
+Even though we may have a user session, the `user` state will always start as null, therefore keeping us from accessing any of the private routes.
 
-We need a way to retrive the user session on load to set the user state.
+We need a way to retrieve the user session on load to set the user state.
 
-WE can check the user status by calling the `checkUserStatus` method wich will now be responsible for updating the user and loading state from the useEffect hook.
+We can check the user status by calling the `checkUserStatus` method which will now be responsible for updating the user and loading state from the use effect hook.
 
 ```jsx
 //utils/AuthContext.jsx
